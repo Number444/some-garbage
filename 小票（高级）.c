@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
-//¿Õ¸ñº¯Êý
+//ç©ºæ ¼å‡½æ•°
 void blank(int a)
 {
 	for (int j = 0;j < a;j++)
@@ -14,39 +14,39 @@ int main()
 	char shouyin[30],pinming[2][30];
 	int mount[2],  sum=0;
 	float perp[2];
-	FILE* fp = fopen("txt01.txt", "a");//´ò¿ªtxtÎÄ¼þ
-	printf("ÇëÊäÈëÊÕÒøÔ±:\n");
-	//¶ÁÈëÊý¾Ý
+	FILE* fp = fopen("txt01.txt", "a");//æ‰“å¼€txtæ–‡ä»¶
+	printf("è¯·è¾“å…¥æ”¶é“¶å‘˜å§“å_______\b\b\b\b\b\b\b");
+	//è¯»å…¥æ•°æ®
 	scanf("%s", shouyin);
 	for (int i = 0;i < 2;i++)
 	{
-		printf("ÇëÊäÈëÆ·Ãû\n");
+		printf("è¯·è¾“å…¥å“å\n");
 		scanf("%s", pinming[i]);
-		printf("ÊäÈëÊýÁ¿\n");
+		printf("è¾“å…¥æ•°é‡\n");
 		scanf("%d", &mount[i]);
-		printf("ÊäÈë¼Û¸ñ\n");
+		printf("è¾“å…¥ä»·æ ¼\n");
 		scanf("%f", &perp[i]);
 	}
-	printf("ÊÕÒøÔ±:%s\n", shouyin);
+	printf("æ”¶é“¶å‘˜:%s\n", shouyin);
 	printf("----------------------------------------\n");
-	printf("Æ·Ãû");
+	printf("å“å");
 	blank(5);
-	printf("ÊýÁ¿");
+	printf("æ•°é‡");
 	blank(5);
-	printf("µ¥¼Û");
+	printf("å•ä»·");
 	blank(5);
-	printf("Ð¡¼Æ");
+	printf("å°è®¡");
 	printf("\n");
-	fprintf(fp,"ÊÕÒøÔ±:%s\n", shouyin);
+	fprintf(fp,"æ”¶é“¶å‘˜:%s\n", shouyin);
 	fputs("----------------------------------------\n",fp);
-	fputs("Æ·Ãû",fp);
+	fputs("å“å",fp);
 	fputs("     ",fp);
-	fputs("ÊýÁ¿",fp);
+	fputs("æ•°é‡",fp);
 	fputs("     ",fp);
-	fputs("µ¥¼Û",fp);
+	fputs("å•ä»·",fp);
 	fputs("     ",fp);
-	fputs("Ð¡¼Æ\n",fp);
-	//Ð´ÈëÊý¾Ý
+	fputs("å°è®¡\n",fp);
+	//å†™å…¥æ•°æ®
 	for (int i = 0;i < 2;i++)
 	{
 		printf("%s",pinming[i]);
@@ -58,7 +58,7 @@ int main()
 		printf("%.2f",mount[i]*perp[i]);
 		sum += mount[i] * perp[i];
 		printf("\n");
-		//´æÈëtxtÎÄ¼þ
+		//å­˜å…¥txtæ–‡ä»¶
 		fprintf(fp,"%s ", pinming[i]);
 		fputs("        ",fp);
 		fprintf(fp,"%d ", mount[i]);
@@ -68,11 +68,11 @@ int main()
 		fprintf(fp,"%.2f ", mount[i] * perp[i]);
 		fputs("\n", fp);
 	}
-	printf("ºÏ¼Æ:%d\n", sum);
-	printf("ÊÕÒø:10000.00");
-	printf("\tÕÒÁã:%d", 10000-sum);
-	fprintf(fp,"ºÏ¼Æ:%d\n", sum);
-	fprintf(fp,"ÊÕÒø:10000.00");
-	fprintf(fp,"\tÕÒÁã:%d\n", 10000 - sum);
-	fclose(fp);//¹Ø±Õtxt
+	printf("åˆè®¡:%d\n", sum);
+	printf("æ”¶é“¶:10000.00");
+	printf("\tæ‰¾é›¶:%d", 10000-sum);
+	fprintf(fp,"åˆè®¡:%d\n", sum);
+	fprintf(fp,"æ”¶é“¶:10000.00");
+	fprintf(fp,"\tæ‰¾é›¶:%d\n", 10000 - sum);
+	fclose(fp);//å…³é—­txt
 }
